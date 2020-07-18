@@ -20,6 +20,9 @@ const solve = (arr) => {
   let sortArr = arr.sort(function(a, b) {
     return a - b;
   });
+  if(arr.length === 1) {
+      return arr[0];
+  }
   let index = 0;
   for(let i = sortArr.length - 1; i > 0; i--) {
     if(sortArr[i] === sortArr[index] * -1) {
