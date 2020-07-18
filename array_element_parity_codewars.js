@@ -16,6 +16,21 @@ Examples:
 (the only-positive or only-negative integer may appear more than o
 */
 
-function solve(arr){
-    //..
+const solve = (arr) => {
+  let sortArr = arr.sort(function(a, b) {
+    return a - b;
+  });
+  let index = 0;
+  for(let i = sortArr.length - 1; i > 0; i--) {
+    if(sortArr[i] === sortArr[index] * -1) {
+      index++;
+      continue;
+    } else {
+      if(sortArr[index] * -1 < sortArr[i]) {
+        return sortArr[i];
+      } else {
+        return sortArr[index];
+      }
+    }
+  }
 };
